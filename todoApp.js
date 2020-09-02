@@ -3,6 +3,7 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const filterOption = document.querySelector('.todo-filter');
 const todoList = document.querySelector('.todo-list');
+const removeAllButton = document.querySelector('.remove-all-button');
 
 
 // Functions
@@ -55,6 +56,11 @@ deleteOrCheckTodo = (event) => {
     if (button.classList[0] === 'complete-button') {
         const todo = button.parentElement;
         todo.classList.toggle('completed');
+    }
+    // Remove all button
+    if (button.classList[0] === 'remove-all-button') {
+        console.log(todoList.children);
+        // TO DO
     }
 }
 
@@ -143,3 +149,4 @@ document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteOrCheckTodo);
 filterOption.addEventListener('click', filterTodos);
+removeAllButton.addEventListener('click', deleteOrCheckTodo);
